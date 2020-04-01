@@ -25,3 +25,13 @@ rancher2_access_key = "sometoken"
 rancher2_secret_key = "somekey"
 rancher2_baseurl = "https://rancher.mydomain.co.uk"
 rancher2_clusterid = "mycluster"
+
+# Node-specific
+
+template_name = "templatename"
+template_num_cpu = "2"
+template_disk_size = "20000"
+node_datastore = "NFS-500"
+node_datacenter = "Homelab"
+node_resourcepool = "RP-1"
+node_mem_size = "4092"
