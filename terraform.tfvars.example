@@ -1,0 +1,27 @@
+nsxt_edgecluster = "edgecluster"
+nsxt_host = "172.16.10.25"
+nsxt_username = "admin"
+nsxt_password = "mynsxtpassword"
+nsxt_logical_tier0_router = "T0"
+nsxt_overlay_tz = "east-west"
+
+# K8s-specific
+
+k8s_api_lb_ip = "10.80.80.10"
+vsphere_user = "Terraform@vsphere.local"
+vsphere_password = "somepassword"
+vsphere_server = "172.16.10.22"
+nsx_container_ipblocks = "10.101.0.0/16"
+external_ip_pools_lb = "10.10.201.0/24"
+clustername = "terraform_cluster_1"
+ovs_uplink_port = "ens192"
+apiserver_host_port = "6443"
+ncp_image_location = "harbor.mydomain.co.uk/library/nsx-ncp-ubuntu:latest"
+
+
+# Rancher-specific
+
+rancher2_access_key = "sometoken"
+rancher2_secret_key = "somekey"
+rancher2_baseurl = "https://rancher.mydomain.co.uk"
+rancher2_clusterid = "mycluster"
