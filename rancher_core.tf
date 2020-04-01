@@ -23,15 +23,15 @@ resource "rancher2_node_template" "vSphere-NSXT-Template" {
   cloud_credential_id = rancher2_cloud_credential.vsphere-terraform.id
    vsphere_config {
    cfgparam = ["disk.enableUUID=TRUE"]
-   clone_from = "/Homelab/vm/UbuntuKernelv4"
-   cpu_count = "3"
+   clone_from = var.template_name
+   cpu_count = var.template_num_cpu
    creation_type = "template"
-   disk_size = "20000"
-   memory_size = "4092"
-   datastore = "/Homelab/datastore/NFS-500"
-   datacenter = "/Homelab"
-   pool = "/Homelab/host/NSX-Cluster/Resources"
-   network = ["/Homelab/network/k8s-mgmt","/Homelab/network/k8s-overlay"]
+   disk_size = var.template_disk_size
+   memory_size = var.node_mem_size
+   datastore = var.node_datastore
+   datacenter = var.node_datacenter
+   pool = var.node_resourcepool
+   network = [nsxt_logical_switch.k8s-mgmt.display_name ,nsxt_logical_switch.k8s-overlay.display_name]
    }
   depends_on = [
     nsxt_logical_switch.k8s-overlay,
@@ -39,7 +39,7 @@ resource "rancher2_node_template" "vSphere-NSXT-Template" {
   ]
 
   provisioner "local-exec" {
-    command = "sleep 20"
+    command = "sleep 10"
   }
 }
 
