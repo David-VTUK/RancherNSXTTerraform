@@ -18,4 +18,8 @@ NSX-T needs to be configured in an existing vSphere environment, including:
 
 ## What this script does
 
+At a high level, the sript provisions the following:
+
+* Test
+
 ![High Level Diagram](./images/NSXT-1-TF.png)
