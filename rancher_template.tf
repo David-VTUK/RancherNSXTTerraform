@@ -17,7 +17,6 @@ resource "template_file" "policy" {
       bottom_firewall_section_marker = ""
       ncp_image_location = var.ncp_image_location
     }
-   # filename = ("${path.module}/output.yaml")
 }
 
 resource "local_file" "foo" {
