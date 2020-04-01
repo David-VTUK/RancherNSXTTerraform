@@ -22,4 +22,5 @@ resource "nsxt_vm_tags" "vm1_tags" {
     scope = "ncp/node_name"
     tag   = data.vsphere_virtual_machine.vm1.name
 }
+
 }

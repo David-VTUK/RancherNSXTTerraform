@@ -130,7 +130,7 @@ resource "nsxt_dhcp_server_ip_pool" "dhcp_ip_pool_k8s_mgmt" {
   lease_time             = 1296000
   error_threshold        = 98
   warning_threshold      = 70
-  #dns_name_servers = ["172.16.10.30"]
+
   ip_range {
     start = "10.80.80.10"
     end   = "10.80.80.200"
@@ -164,7 +164,7 @@ resource "nsxt_dhcp_server_ip_pool" "dhcp_ip_pool_k8s_overlay" {
   lease_time             = 1296000
   error_threshold        = 98
   warning_threshold      = 70
-  #dns_name_servers = ["172.16.10.30"]
+
   ip_range {
     start = "10.80.90.10"
     end   = "10.80.90.254"
