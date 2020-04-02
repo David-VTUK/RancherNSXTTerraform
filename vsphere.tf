@@ -1,3 +1,3 @@
 data "vsphere_datacenter" "dc" {
-  name = "Homelab"
+  name = var.node_datacenter
 }
