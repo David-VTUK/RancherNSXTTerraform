@@ -7,7 +7,7 @@ nsxt_overlay_tz = "east-west"
 
 # K8s-specific
 
-k8s_api_lb_ip = "10.80.80.10"
+k8s_api_lb_ip = "10.80.80.10" # Leave this as-is, will be the IP address for our node.
 vsphere_user = "Terraform@vsphere.local"
 vsphere_password = "somepassword"
 vsphere_server = "172.16.10.22"

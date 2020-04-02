@@ -148,11 +148,11 @@ resource "nsxt_logical_dhcp_port" "dhcp_port_k8s_mgmt" {
 ## DHCP Server configuration for Overlay
 
 resource "nsxt_logical_dhcp_server" "logical_dhcp_server_k8s_overlay" {
-  display_name     = "logical_dhcp_server"
+  display_name     = "logical_dhcp_server_k8s_overlay"
   description      = "logical_dhcp_server provisioned by Terraform"
   dhcp_profile_id  = nsxt_dhcp_server_profile.dhcp_profile-k8s.id
   dhcp_server_ip   = "10.80.90.2/24"
-  gateway_ip       = "10.80.90.1"
+  #gateway_ip       = "10.80.90.1"
   dns_name_servers = ["172.16.10.30"]
 }
 
@@ -160,7 +160,7 @@ resource "nsxt_dhcp_server_ip_pool" "dhcp_ip_pool_k8s_overlay" {
   display_name           = "dhcp_ip_pool-overlay"
   description            = "dhcp_ip_pool-overlay"
   logical_dhcp_server_id = nsxt_logical_dhcp_server.logical_dhcp_server_k8s_overlay.id
-  gateway_ip             = "10.80.90.1"
+ # gateway_ip             = "10.80.90.1"
   lease_time             = 1296000
   error_threshold        = 98
   warning_threshold      = 70
